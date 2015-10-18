@@ -23,12 +23,19 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="CatController">
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">Random cats</h1>
       </ion-header-bar>
       <ion-content>
+        <ion-toggle ng-model="toggleModel.gifs" toggle-class="toggle-calm">
+          gifs
+        </ion-toggle>
+        <img src="{{ imageUrl }}" style="width: 100%">
       </ion-content>
+      <ion-footer-bar class="bar-balanced">
+        <div ng-click="reload()" class="title">next</div>
+      </ion-footer-bar>
     </ion-pane>
   </body>
 </html>
